@@ -80,7 +80,22 @@ import { MarketTypes } from "./libs/types/MarketTypes.sol";
 
 #### NPM Package
 
-TBD
+A better approach to import these libs is using the NPM package created for this. [:link:](https://www.npmjs.com/package/@zondax/filecoin-solidity).
+Run on your project in order to add this package.
+
+```yarn
+yarn add @zondax/filecoin-solidity
+```
+
+In your smart contract, copy and paste these lines.
+
+```solidity
+import { MarketAPI } from "@zondax/filecoin-solidity/contracts/v0.8/MarketAPI.sol";
+import { CommonTypes } from "@zondax/filecoin-solidity/contracts/v0.8/types/CommonTypes.sol";
+import { MarketTypes } from "@zondax/filecoin-solidity/contracts/v0.8/types/MarketTypes.sol";
+import { BigInt } from "@zondax/filecoin-solidity/contracts/v0.8/cbor/BigIntCbor.sol";
+
+```
 
 ## Complementary lectures
 
