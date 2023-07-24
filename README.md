@@ -1,33 +1,35 @@
 # Filecoin Solidity
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![GithubActions](https://github.com/Zondax/filecoin-solidity/actions/workflows/main.yaml/badge.svg)](https://github.com/Zondax/filecoin-solidity/blob/master/.github/workflows/main.yaml)
+
+This repo was forked from: [Zondax/filecoin-solidity](https://github.com/MVPWorkshop/filecoin-solidity)
 
 ---
 
-![zondax_light](docs/assets/zondax_light.png#gh-light-mode-only)
-![zondax_dark](docs/assets/zondax_dark.png#gh-dark-mode-only)
+![MVPw_light](docs/assets/MVP-Workshop-logo.png#gh-light-mode-only)
+![MVPw_dark](docs/assets/MVP-Workshop-white-logo.png#gh-dark-mode-only)
 
-_Please visit our website at [zondax.ch](https://www.zondax.ch)_
+_Please visit our website at [mvpworkshop.co](https://mvpworkshop.co)_
 
 ---
 
 ## Notice
 
 This is software is available under Apache 2.0 License. Use of this library implies your acceptance of these terms and conditions
-This source code at this commit hash (https://github.com/Zondax/filecoin-solidity/commit/d6f20ea11b25e66b9a4fb94d0bb0d913edeb5873) was security-reviewed by Kudelski security (Not fully audited)
 
 Things to keep in mind, while using this library:
-- There are implicit invariants these contracts expect to hold.
-- You should exhaustively read each contract you plan to use, top to bottom.
-- **You can easily “shoot yourself in the foot” if you’re not careful with how you use the library.**
+
+-   There are implicit invariants these contracts expect to hold.
+-   You should exhaustively read each contract you plan to use, top to bottom.
+-   **You can easily “shoot yourself in the foot” if you’re not careful with how you use the library.**
 
 ---
 
 ## Disclaimer :warning:
 
-The libraries have been developed under the following set of assumptions. Take a look at them [here :link:](https://docs.zondax.ch/fevm/filecoin-solidity/introduction/assumptions)
+The libraries have been developed under the following set of assumptions.
 
+Take a look at them [here](https://docs.zondax.ch/fevm/filecoin-solidity/introduction/assumptions).
 
 ---
 
@@ -113,13 +115,63 @@ If you’re starting totally new, we got you! Here’s a 101 conceptual read on 
 
 Find nice articles with rich and valuable content about different topics related to Filecoin network.
 
-## Looking for a JS library to interact with Filecoin? :wrench::hammer:
-
-We have been working hard to create a complete library that covers every aspect you may need in order to interact with 
-the Filecoin blockchain. [Let's go to library](https://www.npmjs.com/package/@zondax/izari-filecoin) :arrow_upper_right:
-
 ## Looking for the complete documentation? :books::books:
 
-We have built this beautiful website for you!
-[Let's go to docs web](https://docs.zondax.ch/fevm/filecoin-solidity) :arrow_upper_right:
- 
+Zondax documentation: [Let's go to docs web](https://docs.zondax.ch/fevm/filecoin-solidity) :arrow_upper_right:
+
+## Getting Started
+
+Requirements / Steps are performed on MacOS.
+
+### Requirements:
+
+-   **Foundry** [[Official Docs]](https://book.getfoundry.sh/getting-started/installation):
+
+    `curl -L https://foundry.paradigm.xyz | bash`
+
+-   **Rust** [[Official Docs]](https://doc.rust-lang.org/book/ch01-01-installation.html):
+
+    `curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh`
+
+-   **Yarn**[[Official Docs]](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable):
+
+    `npm install --global yarn`
+
+-   **CMake** [[Official Docs]](https://cmake.org/download/):
+
+    -   [MacOS] Install GUI: [v3.7.0](https://github.com/Kitware/CMake/releases/download/v3.27.0/cmake-3.27.0-macos-universal.dmg)
+    -   Add it to the Application folder
+    -   Open terminal and run:
+
+        ` sudo "/Applications/CMake.app/Contents/bin/cmake-gui" --install`
+
+### Setup process:
+
+-   Clone the repo with the `--recursive` flag
+
+    ```
+    git clone https://github.com/MVPWorkshop/filecoin-solidity --recursive
+    ```
+
+-   Run: `cd filecoin-solidity`
+-   Install Solc:
+
+    -   MacOS:
+        `make install_solc_mac`
+    -   Linux:
+        `make install_solc_linux`
+
+-   Run: `make`
+
+### Workflow
+
+-   Compiling / testing contracts:
+
+    `forge <build/test>`
+
+-   Running all of the integration tests:
+
+    `make test_integration`
+
+-   Running individual integration tests:
+    -   see [Makefile](./Makefile) for a complete list
