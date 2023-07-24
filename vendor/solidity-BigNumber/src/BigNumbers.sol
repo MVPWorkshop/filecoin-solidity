@@ -1,6 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
+/**
+ * @title BigNumbers
+ * @dev BigNumbers is a modified version of `github.com/Zondax/solidity-BigNumber/blob/master/src/BigNumbers.sol`, which is licensed under the MIT license.
+ * The code was forked at commit: `39dbb9e2dd186a549c9ad7eb1b4b204dc6705245`
+ * The modifications were made in Ju1y, 2023.
+ */
+
 // Definition here allows both the lib and inheriting contracts to use BigNumber directly.
 struct BigNumber { 
     bytes val;
