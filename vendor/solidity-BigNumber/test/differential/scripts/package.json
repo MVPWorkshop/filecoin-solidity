@@ -14,5 +14,8 @@
   "scripts": {
     "compile": "npx tsc --esModuleInterop ./*.ts",
     "differential": "node differential.js"
+  },
+  "dependencies": {
+    "ethers": "^5.7.2"
   }
 }
