@@ -1,5 +1,7 @@
 ﻿# Big Number Library for Solidity
 
+Original version was imported from: [Zondax/solidity-bignumber](https://github.com/Zondax/solidity-BigNumber) which has MIT licence, and was later modified.
+
 ## Introduction
 
 With the release of Metropolis, and the precompiled contract allowing modular exponentiations for arbitrary-sized inputs, we can now process big integer functions on the EVM, ie. values greater than a single EVM word (256 bits). These functions can be used as the building blocks for various cryptographic operations, for example in RSA signature verification, and ring-signature schemes.
