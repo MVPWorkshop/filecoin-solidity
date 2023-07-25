@@ -1,5 +1,6 @@
+#!/bin/zsh
+
 # No optimization
-## --via-ir false
 ./bin/solc contracts/**/*.sol \
   solidity-cborutils=${PWD}/node_modules/solidity-cborutils/ \
   @ensdomains=${PWD}/node_modules/@ensdomains/ \
@@ -11,27 +12,9 @@
 
 if [ $? -eq 0 ];
 then
-  echo "Compiled without ir and without optimization successfully."
+  echo "Compiled without optimization successfully."
 else
-  echo "Failed to compile without ir and without optimization."
-fi
-
-## --via-ir true
-./bin/solc contracts/**/*.sol \
-  solidity-cborutils=${PWD}/node_modules/solidity-cborutils/ \
-  @ensdomains=${PWD}/node_modules/@ensdomains/ \
-  @zondax/solidity-bignumber/=lib/solidity-BigNumber/ \
-  -o output \
-  --evm-version london \
-  --via-ir \
-  --metadata \
-  --overwrite
-
-if [ $? -eq 0 ];
-then
-  echo "Compiled with ir and without optimization successfully."
-else
-  echo "Failed to compile with ir and without optimization."
+  echo "Failed to compile without optimization."
 fi
 
 # Optimizided
