@@ -1,9 +1,11 @@
 [profile.default]
 src = 'contracts'
+solc = '0.8.17'
 out = 'out'
 libs = ['lib']
 test = 'contracts/v0.8/test'
 cache_path = 'foundry-cache'
 optimizer = false
+evm_version = 'paris'
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
