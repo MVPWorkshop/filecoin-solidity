@@ -4,7 +4,7 @@
 ./bin/solc contracts/**/*.sol \
   solidity-cborutils=${PWD}/node_modules/solidity-cborutils/ \
   @ensdomains=${PWD}/node_modules/@ensdomains/ \
-  @zondax/solidity-bignumber/=lib/solidity-BigNumber/ \
+  @zondax/solidity-bignumber/=vendor/solidity-BigNumber/ \
   -o output \
   --evm-version london \
   --metadata \
@@ -22,7 +22,7 @@ fi
 ./bin/solc contracts/**/*.sol \
   solidity-cborutils=${PWD}/node_modules/solidity-cborutils/ \
   @ensdomains=${PWD}/node_modules/@ensdomains/ \
-  @zondax/solidity-bignumber/=lib/solidity-BigNumber/ \
+  @zondax/solidity-bignumber/=vendor/solidity-BigNumber/ \
   -o output \
   --evm-version london \
   --optimize \
@@ -41,7 +41,7 @@ fi
 ./bin/solc contracts/**/*.sol \
   solidity-cborutils=${PWD}/node_modules/solidity-cborutils/ \
   @ensdomains=${PWD}/node_modules/@ensdomains/ \
-  @zondax/solidity-bignumber/=lib/solidity-BigNumber/ \
+  @zondax/solidity-bignumber/=vendor/solidity-BigNumber/ \
   -o output \
   --evm-version london \
   --optimize \
