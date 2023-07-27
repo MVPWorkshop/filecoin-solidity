@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.17;
+pragma solidity 0.8.18;
 
 /**
  * @title BigNumbers
@@ -944,7 +944,7 @@ library BigNumbers {
         bytes memory result;
         assembly {
 
-            let result_start := mload(0x40)                                       // Get the highest available block of memory
+            let result_start := mload(0x40)                                   // Get the highest available block of memory
             let carry := 0
             let uint_max := sub(0,1)
 
@@ -1039,7 +1039,7 @@ library BigNumbers {
         uint uint_max = type(uint256).max;
         assembly {
                 
-            let result_start := mload(0x40)                                     // Get the highest available block of 
+            let result_start := mload(0x40)                                 // Get the highest available block of 
                                                                             // memory
         
             let max_len := mload(max)
@@ -1167,7 +1167,7 @@ library BigNumbers {
             let ml := mload(_m)
             
             
-            let freemem := mload(0x40) // Free memory pointer is always stored at 0x40
+            let freemem := mload(0x40)  // Free memory pointer is always stored at 0x40
             
             
             mstore(freemem, bl)         // arg[0] = base.length @ +0
