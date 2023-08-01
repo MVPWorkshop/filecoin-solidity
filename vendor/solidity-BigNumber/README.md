@@ -1,6 +1,12 @@
 ﻿# Big Number Library for Solidity
 
-Original version was imported from: [Zondax/solidity-bignumber](https://github.com/Zondax/solidity-BigNumber) which has MIT licence, and was later modified.
+The original version was imported from the [Zondax/solidity-bignumber](https://github.com/Zondax/solidity-BigNumber) library and as such is licensed under the MIT license (see [LICENSE](./LICENSE) for details).
+
+The code was forked at commit: `39dbb9e2dd186a549c9ad7eb1b4b204dc6705245`
+
+Most of the derived work falls under one of the following categories:
+
+-   removal of the `msize()` call, which prevents the library from compiling with the Solidity optimizer turned on
 
 ## Introduction
 
