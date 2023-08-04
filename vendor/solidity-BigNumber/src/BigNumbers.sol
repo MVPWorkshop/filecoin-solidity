@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.17;
+pragma solidity 0.8.18;
 
 /**
  * @title BigNumbers
@@ -884,7 +884,7 @@ library BigNumbers {
             let data := add(val, 0x20)
             let length := mload(val)
             let out
-            let freemem := msize()
+            let freemem := mload(0x40)
             switch eq(mod(length, 0x20), 0)                       // if(val.length % 32 == 0)
                 case 1 {
                     out     := add(freemem, 0x20)                 // freememory location + length word
@@ -895,6 +895,7 @@ library BigNumbers {
                     out     := add(add(freemem, offset), 0x20)    // freememory location + offset + length word
                     mstore(freemem, add(length, offset))          // set new length 
                 }
+            mstore(add(freemem, 0x20), 0)
             pop(staticcall(450, 0x4, data, length, out, length))  // copy into 'out' memory location
             mstore(0x40, add(freemem, add(mload(freemem), 0x20))) // update the free memory pointer
             
@@ -943,7 +944,7 @@ library BigNumbers {
         bytes memory result;
         assembly {
 
-            let result_start := msize()                                       // Get the highest available block of memory
+            let result_start := mload(0x40)                                   // Get the highest available block of memory
             let carry := 0
             let uint_max := sub(0,1)
 
@@ -1038,7 +1039,7 @@ library BigNumbers {
         uint uint_max = type(uint256).max;
         assembly {
                 
-            let result_start := msize()                                     // Get the highest available block of 
+            let result_start := mload(0x40)                                 // Get the highest available block of 
                                                                             // memory
         
             let max_len := mload(max)
@@ -1166,7 +1167,7 @@ library BigNumbers {
             let ml := mload(_m)
             
             
-            let freemem := mload(0x40) // Free memory pointer is always stored at 0x40
+            let freemem := mload(0x40)  // Free memory pointer is always stored at 0x40
             
             
             mstore(freemem, bl)         // arg[0] = base.length @ +0
