@@ -1,15 +1,9 @@
 # Filecoin Solidity
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
-This repo was forked from: [Zondax/filecoin-solidity](https://github.com/MVPWorkshop/filecoin-solidity)
-
 ---
 
-![MVPw_light](docs/assets/MVP-Workshop-logo.png#gh-light-mode-only)
-![MVPw_dark](docs/assets/MVP-Workshop-white-logo.png#gh-dark-mode-only)
-
-_Please visit our website at [mvpworkshop.co](https://mvpworkshop.co)_
+Originally authored by Zondax.  Learn more at [zondax.ch](https://www.zondax.ch).
+Protocol Labs are now the owners of this library, and will mantain it moving forward.
 
 ---
 
